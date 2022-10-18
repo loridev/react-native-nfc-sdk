@@ -1,0 +1,31 @@
+{
+  "name": "react-native-nfc-sdk",
+  "version": "0.0.2",
+  "description": "A package which pretends to make NFC and HCE operations accessible to everyone on react native. Based on react-native-nfc-manager and react-native-hce",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loridev/react-native-nfc-sdk.git"
+  },
+  "keywords": [
+    "react-native",
+    "android",
+    "ios",
+    "nfc",
+    "hce",
+    "sdk"
+  ],
+  "author": "loridev",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/loridev/react-native-nfc-sdk/issues"
+  },
+  "homepage": "https://github.com/loridev/react-native-nfc-sdk#readme",
+  "dependencies": {
+    "react-native-hce": "^0.2.0",
+    "react-native-nfc-manager": "^3.14.0"
+  }
+}
