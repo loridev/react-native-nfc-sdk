@@ -1,6 +1,6 @@
 # react-native-nfc-sdk
 
-[![NPM Version](https://badgen.net/badge/npm/v0.1.5-alpha/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
+[![NPM Version](https://badgen.net/badge/npm/v0.1.6-alpha/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
 [![Dev supported?](https://badgen.net/badge/dev_support/yes/green)](https://github.com/loridev/react-native-nfc-sdk/graphs/commit-activity)
 [![License](https://badgen.net/badge/licence/GPL-3.0/orange)](https://github.com/loridev/react-native-nfc-sdk/blob/main/LICENSE)
 
@@ -50,7 +50,7 @@ Since this was only tested on Android, there will only be documentation on how t
 
 ##### NFC
 
-Go to the file `app/android/src/main/AndroidManifest.xml` and add this line before the `application` tag:
+Go to the file `android/app/src/main/AndroidManifest.xml` and add this line before the `application` tag:
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -65,7 +65,20 @@ Go to the file `app/android/src/main/AndroidManifest.xml` and add this line befo
 
 ##### HCE
 
-Go to the file `app/android/src/main/AndroidManifest.xml` and add this line before the `application` tag:
+Create a new file `android/app/src/main/res/xml/aid_list.xml` (you have to create the `aid_list.xml` file) and put the following content in the file:
+
+```xml
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+                   android:description="@string/app_name"
+                   android:requireDeviceUnlock="false">
+  <aid-group android:category="other"
+             android:description="@string/app_name">
+    <aid-filter android:name="D2760000850101" />
+  </aid-group>
+</host-apdu-service>
+```
+
+Go to the file `android/app/src/main/AndroidManifest.xml` and add this line before the `application` tag:
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -78,6 +91,38 @@ Go to the file `app/android/src/main/AndroidManifest.xml` and add this line befo
   <uses-feature android:name="android.hardware.nfc.hce" android:required="true" />
   <!-- [...] -->
 </manifest>
+```
+
+In the same `AndroidManifest.xml` file, add the following lines in the `application` block so the app can communicate with the HCE service:
+
+```xml
+<application
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:allowBackup="false"
+      android:theme="@style/AppTheme">
+
+    <!-- ... -->
+
+    <!-- Add the following block: -->
+    <service
+        android:name="com.reactnativehce.services.CardService"
+        android:exported="true"
+        android:enabled="false"
+        android:permission="android.permission.BIND_NFC_SERVICE" >
+        <intent-filter>
+          <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+          <category android:name="android.intent.category.DEFAULT"/>
+        </intent-filter>
+
+        <meta-data
+          android:name="android.nfc.cardemulation.host_apdu_service"
+          android:resource="@xml/aid_list" />
+    </service>
+    <!-- ... -->
+</application>
 ```
 
 #### Usage
@@ -161,24 +206,28 @@ export default function App () {
 }
 ```
 
+### API Reference
+
 ## Changelog
 
-`0.1.5`: Added the Changelog on the docs
+- `0.1.6`: Corrected a step missing in the "Getting Started" of the HCE technology docs + typos correction
 
-`0.1.4`: General typo correction on docs
+- `0.1.5`: Added the Changelog to the docs
 
-`0.1.2`: Docs pre-release, enough to build an app using the library
+- `0.1.4`: General typo correction on docs
 
-`0.1.1`: TypeScript module types declaration
+- `0.1.2`: Docs pre-release, enough to build an app using the library
 
-`0.1.0`: First functional release (alpha)
+- `0.1.1`: TypeScript module types declaration
 
-`0.0.6`: Fixed bug with the error handling on the HCE read event where it wouldn't stop listening for the event
+- `0.1.0`: First functional release (alpha)
 
-`0.0.5`: Added HCETools class, which provides methods for using the HCE technology
+- `0.0.6`: Fixed bug with the error handling on the HCE read event where it wouldn't stop listening for the event
 
-`0.0.4`: Added writeTag method on the NdefTools
+- `0.0.5`: Added HCETools class, which provides methods for using the HCE technology
 
-`0.0.3`: Fixed a bug where the payload wasn't being decoded correctly in the readTag function of the NdefTools
+- `0.0.4`: Added writeTag method on the NdefTools
 
-`0.0.2`: Npm package publish, testing purposes
+- `0.0.3`: Fixed a bug where the payload wasn't being decoded correctly in the readTag function of the NdefTools
+
+- `0.0.2`: Npm package publish, testing purposes
