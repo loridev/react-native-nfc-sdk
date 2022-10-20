@@ -8,13 +8,13 @@
 
 ## Behind the scenes
 
-This package simplifies operations in the packages [react-nfc-manager](https://github.com/revtel/react-native-nfc-manager) and [react-native-hce](https://github.com/appidea/react-native-hce). If does not cover your specific case, type an [issue](https://github.com/loridev/react-native-nfc-sdk/issues) or head to the respective package depending on what technology you're trying to use.
+This package simplifies operations in the packages [react-nfc-manager](https://github.com/revtel/react-native-nfc-manager) and [react-native-hce](https://github.com/appidea/react-native-hce). If it does not cover your specific case, create an [issue](https://github.com/loridev/react-native-nfc-sdk/issues) or head to the respective package depending on what technology you're trying to use.
 
 ## Good to know
 
 - Only tested in Android, so it may give you problems on other platforms
 
-- It should cover the big majority of cases where NFC technology is used
+- It should cover the vast majority of cases where NFC technology is used
 
 - Has utilities for both NFC and HCE technologies
 
