@@ -136,7 +136,7 @@ import { HceTools } from 'react-native-nfc-sdk';
 export default function App () {
     const hce = new HceTools();
     const [isTagRead, setIsTagRead] = React.useState('No');
-    
+
     const emulate = () => {
         // The start emulation function receives a content, which
         // corresponds to a NFC tag payload, and a writable boolean,
@@ -160,3 +160,25 @@ export default function App () {
     );
 }
 ```
+
+## Changelog
+
+`0.1.5`: Added the Changelog on the docs
+
+`0.1.4`: General typo correction on docs
+
+`0.1.2`: Docs pre-release, enough to build an app using the library
+
+`0.1.1`: TypeScript module types declaration
+
+`0.1.0`: First functional release (alpha)
+
+`0.0.6`: Fixed bug with the error handling on the HCE read event where it wouldn't stop listening for the event
+
+`0.0.5`: Added HCETools class, which provides methods for using the HCE technology
+
+`0.0.4`: Added writeTag method on the NdefTools
+
+`0.0.3`: Fixed a bug where the payload wasn't being decoded correctly in the readTag function of the NdefTools
+
+`0.0.2`: Npm package publish, testing purposes
