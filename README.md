@@ -1,6 +1,6 @@
 # react-native-nfc-sdk
 
-[![NPM Version](https://badgen.net/badge/npm/v0.1.6-alpha/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
+[![NPM Version](https://badgen.net/badge/npm/v0.1.7-alpha/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
 [![Dev supported?](https://badgen.net/badge/dev_support/yes/green)](https://github.com/loridev/react-native-nfc-sdk/graphs/commit-activity)
 [![License](https://badgen.net/badge/licence/GPL-3.0/orange)](https://github.com/loridev/react-native-nfc-sdk/blob/main/LICENSE)
 
@@ -29,26 +29,26 @@ This package simplifies operations in the packages [react-nfc-manager](https://g
 - Write a custom payload to a NFC tag
 
 - Use the HCE technology to use your phone as a NFC tag
-
-## Docs
+  
+  
 
 **WARNING: DOCS ARE NOT FINISHED (yet)**
 
-### Getting Started
+## Getting Started
 
 Note: Every time a relative route is shown in this documentation, corresponds to the route from **your react native project root**.
 
-#### Installing
+### Installing
 
 ```shell
 npm i react-native-nfc-sdk
 ```
 
-#### Permission settings
+### Permission settings
 
 Since this was only tested on Android, there will only be documentation on how to do the permissions configuration on Android. You'll need to enable different permissions depending on if you're using the NFC or HCE technologies.
 
-##### NFC
+#### NFC
 
 Go to the file `android/app/src/main/AndroidManifest.xml` and add this line before the `application` tag:
 
@@ -63,7 +63,7 @@ Go to the file `android/app/src/main/AndroidManifest.xml` and add this line befo
 </manifest>
 ```
 
-##### HCE
+#### HCE
 
 Create a new file `android/app/src/main/res/xml/aid_list.xml` (you have to create the `aid_list.xml` file) and put the following content in the file:
 
@@ -125,9 +125,9 @@ In the same `AndroidManifest.xml` file, add the following lines in the `applicat
 </application>
 ```
 
-#### Usage
+### Usage
 
-##### NFC
+#### NFC
 
 ```javascript
 import React from 'react';
@@ -152,7 +152,7 @@ export default function App () {
         // is passed and tries to write the content passed by parameter
         // as the payload. It returns a boolean wether the write action
         // was successful or not.
-        if (await ndef.WriteTag('NFC Hello World')) {
+        if (await ndef.writeTag('NFC Hello World')) {
             setWriteStatus('Tag written successfully!');
         } else {
             setWriteStatus('There was an error writing the tag :(');
@@ -170,7 +170,7 @@ export default function App () {
 }
 ```
 
-##### HCE
+#### HCE
 
 ```javascript
 import React from 'react';
@@ -206,9 +206,11 @@ export default function App () {
 }
 ```
 
-### API Reference
+## API Reference
 
 ## Changelog
+
+- `0.1.7`: Changed the headlines structure in order to offer a clearer documentation + typos correction
 
 - `0.1.6`: Corrected a step missing in the "Getting Started" of the HCE technology docs + typos correction
 
