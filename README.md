@@ -1,6 +1,6 @@
 # react-native-nfc-sdk
 
-[![NPM Version](https://badgen.net/badge/npm/v0.1.4-alpha/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
+[![NPM Version](https://badgen.net/badge/npm/v0.1.5-alpha/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
 [![Dev supported?](https://badgen.net/badge/dev_support/yes/green)](https://github.com/loridev/react-native-nfc-sdk/graphs/commit-activity)
 [![License](https://badgen.net/badge/licence/GPL-3.0/orange)](https://github.com/loridev/react-native-nfc-sdk/blob/main/LICENSE)
 
