@@ -72,6 +72,8 @@ Go to the file `app/android/src/main/AndroidManifest.xml` and add this line befo
   package="com.your-app-name"> <!-- DON'T MODIFY THE MANIFEST TAG -->
   <!-- ADD THIS BELOW LINE IF NOT PRESENT -->
   <uses-permission android:name="android.permission.INTERNET" />
+  <!-- ENABLE PERMISSION TO NFC HARDWARE -->
+  <uses-permission android:name="android.permission.NFC" />
   <!-- ENABLE ACCESS TO THE HCE FEATURE -->
   <uses-feature android:name="android.hardware.nfc.hce" android:required="true" />
   <!-- [...] -->
