@@ -62,8 +62,7 @@ export default class NdefTools {
 
       return false;
     } catch (err) {
-      console.error('Writing the card was not possible.');
-      return false;
+      throw err
     } finally {
       this.cancelRequest();
     }

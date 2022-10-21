@@ -34,7 +34,7 @@ export default class HceTools {
         this.stopEmulation();
       });
     } catch (err) {
-      console.error('There was an error while emulating.');
+      throw err;
     }
   }
 }

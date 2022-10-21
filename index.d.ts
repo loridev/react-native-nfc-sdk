@@ -16,13 +16,13 @@ declare module 'react-native-nfc-sdk' {
      * Function which listens until a Ndef tag is detected in the device's NFC reader. Then returns the id of the
      * Ndef tag and its decoded payload (as "content")
      * 
-     * @return {Promise<NdefTagInfo | undefined>} An object containing the id and the decoded payload of the NFC tag or undefined in case there was an error reading the tag (The error will be logged).
+     * @return {Promise<NdefTagInfo | undefined>} An object containing the id and the decoded payload of the NFC tag or undefined in case there was an error reading the tag (The error will be thrown).
      */
     readTag (): Promise<NdefTagInfo | undefined>;
 
     /**
      * Function that writes a value as the payload of a Ndef tag and returns a boolean wether the card was written
-     * successfully
+     * successfully, errors may be thrown
      * 
      * @param value The value that will be written to the Ndef card
      * 
@@ -49,7 +49,7 @@ declare module 'react-native-nfc-sdk' {
     hceSession?: HCESession;
 
     /**
-     * Method to start a hce emulation and execute a callback once its read
+     * Method to start a hce emulation and execute a callback once it's read
      * 
      * @param options object which receives a content and a writable boolean to determine what's going to be the
         payload of the emulated card when read and wether it's writable by other phones or not
