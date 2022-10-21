@@ -1,6 +1,6 @@
 {
   "name": "react-native-nfc-sdk",
-  "version": "0.2.0beta",
+  "version": "0.2.1beta",
   "description": "A package which pretends to make NFC and HCE operations accessible to everyone on react native. Based on react-native-nfc-manager and react-native-hce",
   "main": "dist/index.js",
   "scripts": {

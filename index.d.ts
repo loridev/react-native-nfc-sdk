@@ -4,7 +4,7 @@ import { HceOptions, HceReadHandler } from './src/types/HceTypes';
 
 declare module 'react-native-nfc-sdk' {
   /**
-   * Class which provides methods for reading and writing ndef tags
+   * Class that provides methods for reading and writing ndef tags
    */
   class NdefTools {
     /**
@@ -13,7 +13,7 @@ declare module 'react-native-nfc-sdk' {
     cancelRequest: () => void;
 
     /**
-     * Function which listens until a Ndef tag is detected in the device's NFC reader. Then returns the id of the
+     * Function that listens until a Ndef tag is detected in the device's NFC reader. Then returns the id of the
      * Ndef tag and its decoded payload (as "content")
      * 
      * @return {Promise<NdefTagInfo | undefined>} An object containing the id and the decoded payload of the NFC tag or undefined in case there was an error reading the tag (The error will be thrown).
@@ -32,7 +32,7 @@ declare module 'react-native-nfc-sdk' {
   }
 
   /**
-  * Class which provides methods for emulating a Ndef card with your phone
+  * Class that provides methods for emulating a Ndef card with your phone
   */
   class HceTools {
     /**
@@ -51,9 +51,9 @@ declare module 'react-native-nfc-sdk' {
     /**
      * Method to start a hce emulation and execute a callback once it's read
      * 
-     * @param options object which receives a content and a writable boolean to determine what's going to be the
+     * @param options object that receives a content and a writable boolean to determine what's going to be the
         payload of the emulated card when read and wether it's writable by other phones or not
-     * @param onRead callback which will be executed once the emulated card is read (triggers stopEmulation)
+     * @param onRead callback that will be executed once the emulated card is read (triggers stopEmulation)
      */
     startEmulation (options: HceOptions, onRead: HceReadHandler): Promise<void>;
   }

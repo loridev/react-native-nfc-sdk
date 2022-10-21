@@ -1,6 +1,6 @@
 # react-native-nfc-sdk
 
-[![NPM Version](https://badgen.net/badge/npm/v0.2.0-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
+[![NPM Version](https://badgen.net/badge/npm/v0.2.1-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
 [![Dev supported?](https://badgen.net/badge/dev_support/yes/green)](https://github.com/loridev/react-native-nfc-sdk/graphs/commit-activity)
 [![License](https://badgen.net/badge/licence/GPL-3.0/orange)](https://github.com/loridev/react-native-nfc-sdk/blob/main/LICENSE)
 
@@ -32,7 +32,6 @@ This package simplifies operations in the packages [react-nfc-manager](https://g
   
   
 
-**WARNING: DOCS ARE NOT FINISHED (yet)**
 
 ## Getting Started
 
@@ -207,8 +206,11 @@ export default function App () {
 ```
 
 ## API Reference
+The API reference is available [here](https://github.com/loridev/react-native-nfc-sdk/wiki)
 
 ## Changelog
+
+- `0.2.1`: API reference is now available + typos in module declaration
 
 - `0.2.0`: Improved error handling on both NDEF and HCE tools + end of the alpha status + first beta release
 
