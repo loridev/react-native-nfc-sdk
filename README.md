@@ -1,6 +1,6 @@
 # react-native-nfc-sdk
 
-[![NPM Version](https://badgen.net/badge/npm/v0.2.1-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
+[![NPM Version](https://badgen.net/badge/npm/v0.2.2-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
 [![Dev supported?](https://badgen.net/badge/dev_support/yes/green)](https://github.com/loridev/react-native-nfc-sdk/graphs/commit-activity)
 [![License](https://badgen.net/badge/licence/GPL-3.0/orange)](https://github.com/loridev/react-native-nfc-sdk/blob/main/LICENSE)
 
@@ -142,8 +142,12 @@ export default function App () {
         // The read tag function sets an event handler for when a tag
         // is read and returns a js object of
         // {id: 'nfc-id', content: 'decoded-payload'}
-        const tag = await ndef.readTag();
-        if (tag) setTagContent(tag.content);    
+        try {
+          const tag = await ndef.readTag();
+          if (tag) setTagContent(tag.content);   
+        } catch (err) {
+          console.err(err);
+        } 
     }
 
     const writeTag = async () => {
@@ -151,10 +155,14 @@ export default function App () {
         // is passed and tries to write the content passed by parameter
         // as the payload. It returns a boolean wether the write action
         // was successful or not.
-        if (await ndef.writeTag('NFC Hello World')) {
-            setWriteStatus('Tag written successfully!');
-        } else {
-            setWriteStatus('There was an error writing the tag :(');
+        try {
+          if (await ndef.writeTag('NFC Hello World')) {
+              setWriteStatus('Tag written successfully!');
+          } else {
+              setWriteStatus('There was an error writing the tag :(');
+          }
+        } catch (err) {
+          console.err(err);
         }
     }
 
@@ -209,6 +217,8 @@ export default function App () {
 The API reference is available [here](https://github.com/loridev/react-native-nfc-sdk/wiki)
 
 ## Changelog
+
+- `0.2.2`: Changed the hello world snippets in the documentation to match the 0.2.x releases
 
 - `0.2.1`: API reference is now available + typos in module declaration
 
