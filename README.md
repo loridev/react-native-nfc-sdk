@@ -1,6 +1,6 @@
 # react-native-nfc-sdk
 
-[![NPM Version](https://badgen.net/badge/npm/v0.2.3-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
+[![NPM Version](https://badgen.net/badge/npm/v0.2.4-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
 [![Dev supported?](https://badgen.net/badge/dev_support/yes/green)](https://github.com/loridev/react-native-nfc-sdk/graphs/commit-activity)
 [![License](https://badgen.net/badge/licence/GPL-3.0/orange)](https://github.com/loridev/react-native-nfc-sdk/blob/main/LICENSE)
 
@@ -218,7 +218,9 @@ The API reference is available [here](https://github.com/loridev/react-native-nf
 
 ## Changelog
 
-- `0.2.3`: Reduced by half the package size by removing useless comments/text
+- `0.2.4`: Improving the code documentation for developers in the NdefTools class and minor fixes on error handling
+
+- `0.2.3`: Reduced the package size by removing useless comments/text
 
 - `0.2.2`: Changed the hello world snippets in the documentation to match the 0.2.x releases
 

@@ -21,22 +21,22 @@ export default class NdefTools {
    */
   async readTag (): Promise<NdefTagInfo | undefined> {
     try {
-      await NfcManager.requestTechnology(NfcTech.Ndef);
-      const tag = await NfcManager.getTag();
+      await NfcManager.requestTechnology(NfcTech.Ndef); // Request the hardware to listen for a specific technology
+      const tag = await NfcManager.getTag(); // Opening the event listener to look for a NFC card to be read
 
       if (tag && tag.id) {
         return {
           id: tag.id,
           content: Ndef.uri.decodePayload(tag.ndefMessage[0].payload as unknown as Uint8Array)
-            .replace('https://www.en', ''),
+            .replace('https://www.en', ''), // Decoding the payload since is a buffer and we want to return the decoded payload
         }
       } else {
         throw new Error('Reading the tag was not possible.')
       }
     } catch (err) {
-      console.error(err);
+      throw err;
     } finally {
-      this.cancelRequest();
+      this.cancelRequest(); // Cancel the NFC request at the end of the operation
     }
   }
 
@@ -53,16 +53,16 @@ export default class NdefTools {
     try {
       await NfcManager.requestTechnology(NfcTech.Ndef);
       
-      const bytes = Ndef.encodeMessage([Ndef.textRecord(value)]);
+      const bytes = Ndef.encodeMessage([Ndef.textRecord(value)]); // Encoding as buffer the string we recieved
 
       if (bytes) {
-        await NfcManager.ndefHandler.writeNdefMessage(bytes);
+        await NfcManager.ndefHandler.writeNdefMessage(bytes); // Writing the buffer in the Ndef tag
         return true;
       }
 
       return false;
     } catch (err) {
-      throw err
+      throw err;
     } finally {
       this.cancelRequest();
     }
