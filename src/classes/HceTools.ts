@@ -13,8 +13,12 @@ export default class HceTools {
     HCESession.getInstance()
       .then(instance => this.hceSession = instance)
     this.stopEmulation = async () => {
-      await this.hceSession?.setEnabled(false);
-      this.removeListener && this.removeListener();
+      try {
+        await this.hceSession?.setEnabled(false);
+        this.removeListener && this.removeListener();
+      } catch (err) {
+        throw err;
+      }
     }
   }
 
