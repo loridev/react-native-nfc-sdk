@@ -17,7 +17,7 @@ export default class NdefTools {
    * Function which listens until a Ndef tag is detected in the device's NFC reader. Then returns the id of the
    * Ndef tag and its decoded payload (as "content")
    * 
-   * @return {Promise<NdefTagInfo | undefined>} An object containing the id and the decoded payload of the NFC tag or undefined in case there was an error reading the tag (The error will be logged).
+   * @return { Promise<NdefTagInfo | undefined> } An object containing the id and the decoded payload of the NFC tag or undefined in case there was an error reading the tag (The error will be logged).
    */
   async readTag (): Promise<NdefTagInfo | undefined> {
     try {
