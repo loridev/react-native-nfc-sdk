@@ -1,6 +1,6 @@
 # react-native-nfc-sdk
 
-[![NPM Version](https://badgen.net/badge/npm/v0.3.0-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
+[![NPM Version](https://badgen.net/badge/npm/v0.3.1-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
 [![Dev supported?](https://badgen.net/badge/dev_support/yes/green)](https://github.com/loridev/react-native-nfc-sdk/graphs/commit-activity)
 [![License](https://badgen.net/badge/licence/GPL-3.0/orange)](https://github.com/loridev/react-native-nfc-sdk/blob/main/LICENSE)
 
@@ -41,6 +41,11 @@ Note: Every time a relative route is shown in this documentation, corresponds to
 
 ```shell
 npm i react-native-nfc-sdk
+```
+
+#### Installing dependencies (from v0.3.1)
+```shell
+npm i react-native-nfc-manager react-native-hce
 ```
 
 ### Permission settings
@@ -218,7 +223,9 @@ The API reference is available [here](https://github.com/loridev/react-native-nf
 
 ## Changelog
 
-- `0.3.0`: Fixed problem with dependencies when installing the package
+- `0.3.1`: Provided a provisional solution for dependency problem in the documentation
+
+- `0.3.0`: Fixed problem with dependencies when installing the package (NOT WORKING ANYMORE)
 
 - `0.2.6`: Improved code quality following Oracle conventions for making it easier for developers to colaborate
 
