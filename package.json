@@ -1,10 +1,12 @@
 {
   "name": "react-native-nfc-sdk",
-  "version": "0.2.6beta",
+  "version": "0.3.0beta",
   "description": "A package which pretends to make NFC and HCE operations accessible to everyone on react native. Based on react-native-nfc-manager and react-native-hce",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm i react-native-nfc-manager react-native-hce",
+    "postuninstall": "npm uninstall react-native-nfc-manager react-native-hce"
   },
   "repository": {
     "type": "git",
