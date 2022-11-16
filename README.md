@@ -1,6 +1,6 @@
 # react-native-nfc-sdk
 
-[![NPM Version](https://badgen.net/badge/npm/v0.3.1-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
+[![NPM Version](https://badgen.net/badge/npm/v0.3.2-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
 [![Dev supported?](https://badgen.net/badge/dev_support/yes/green)](https://github.com/loridev/react-native-nfc-sdk/graphs/commit-activity)
 [![License](https://badgen.net/badge/licence/GPL-3.0/orange)](https://github.com/loridev/react-native-nfc-sdk/blob/main/LICENSE)
 
@@ -153,6 +153,7 @@ export default function App () {
         } catch (err) {
           console.err(err);
         } 
+        ndef.cancelRequest(); // Cancel the request to the nfc hardware
     }
 
     const writeTag = async () => {
@@ -169,6 +170,7 @@ export default function App () {
         } catch (err) {
           console.err(err);
         }
+        ndef.cancelRequest(); // Cancel the request to the nfc hardware
     }
 
     return (
@@ -222,6 +224,8 @@ export default function App () {
 The API reference is available [here](https://github.com/loridev/react-native-nfc-sdk/wiki)
 
 ## Changelog
+
+- `0.3.2`: Added the cancelRequest function in the hello world scripts, so users don't get NFC hardware errors
 
 - `0.3.1`: Provided a provisional solution for dependency problem in the documentation
 
