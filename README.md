@@ -1,6 +1,6 @@
 # react-native-nfc-sdk
 
-[![NPM Version](https://badgen.net/badge/npm/v0.3.2-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
+[![NPM Version](https://badgen.net/badge/npm/v0.3.3-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
 [![Dev supported?](https://badgen.net/badge/dev_support/yes/green)](https://github.com/loridev/react-native-nfc-sdk/graphs/commit-activity)
 [![License](https://badgen.net/badge/licence/GPL-3.0/orange)](https://github.com/loridev/react-native-nfc-sdk/blob/main/LICENSE)
 
@@ -20,7 +20,7 @@ This package simplifies operations in the packages [react-nfc-manager](https://g
 
 - Uses NDEF (NFC Data Exchange Format) for compatibility purposes
 
-- This package **WON'T WORK** in a Expo React Native app
+- This package **WON'T WORK** in a Expo *Managed* React Native app
 
 ## What can I do with this package?
 
@@ -224,6 +224,8 @@ export default function App () {
 The API reference is available [here](https://github.com/loridev/react-native-nfc-sdk/wiki)
 
 ## Changelog
+
+- `0.3.3`: Aclaration on expo in the documentation for new React Native versions
 
 - `0.3.2`: Added the cancelRequest function in the hello world scripts, so users don't get NFC hardware errors
 
