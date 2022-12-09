@@ -1,4 +1,4 @@
 export type NdefTagInfo = {
-  id: string,
-  content: string,
-}
+  id: string;
+  content: string;
+};

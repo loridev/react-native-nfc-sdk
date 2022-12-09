@@ -1,4 +1,9 @@
-import { HCESessionEventListenerCancel, HCESession, NFCTagType4, NFCTagType4NDEFContentType } from "react-native-hce";
+import {
+  HCESessionEventListenerCancel,
+  HCESession,
+  NFCTagType4,
+  NFCTagType4NDEFContentType,
+} from "react-native-hce";
 import { HceOptions, HceReadHandler } from "../types/HceTypes";
 
 /**
@@ -9,9 +14,8 @@ export default class HceTools {
   stopEmulation: () => Promise<void>;
   hceSession?: HCESession;
 
-  constructor () {
-    HCESession.getInstance()
-      .then(instance => this.hceSession = instance)
+  constructor() {
+    HCESession.getInstance().then((instance) => (this.hceSession = instance));
     this.stopEmulation = async () => {
       try {
         await this.hceSession?.setEnabled(false);
@@ -19,24 +23,27 @@ export default class HceTools {
       } catch (err) {
         throw err;
       }
-    }
+    };
   }
 
-  async startEmulation (options: HceOptions, onRead: HceReadHandler) {
+  async startEmulation(options: HceOptions, onRead: HceReadHandler) {
     const tag = new NFCTagType4({
       type: NFCTagType4NDEFContentType.Text,
       content: options.content,
-      writable: options.writable
+      writable: options.writable,
     });
 
     try {
       this.hceSession = await HCESession.getInstance();
       this.hceSession.setApplication(tag);
       await this.hceSession.setEnabled(true);
-      this.removeListener = this.hceSession.on(HCESession.Events.HCE_STATE_READ, () => {
-        onRead();
-        this.stopEmulation();
-      });
+      this.removeListener = this.hceSession.on(
+        HCESession.Events.HCE_STATE_READ,
+        () => {
+          onRead();
+          this.stopEmulation();
+        }
+      );
     } catch (err) {
       throw err;
     }
