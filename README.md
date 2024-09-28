@@ -1,7 +1,7 @@
 # react-native-nfc-sdk
 
 [![NPM Version](https://badgen.net/badge/npm/v0.3.4-beta/yellow)](https://www.npmjs.com/package/react-native-nfc-sdk)
-[![Dev supported?](https://badgen.net/badge/dev_support/yes/green)](https://github.com/loridev/react-native-nfc-sdk/graphs/commit-activity)
+[![Dev supported?](https://badgen.net/badge/dev_support/no/red)](https://github.com/loridev/react-native-nfc-sdk/graphs/commit-activity)
 [![License](https://badgen.net/badge/licence/GPL-3.0/orange)](https://github.com/loridev/react-native-nfc-sdk/blob/main/LICENSE)
 
 **react-native-nfc sdk** is a package that aims to simplify the way NFC apps are coded in React Native in order to make it easier for developers to implement their solutions and  develop their ideas using the NFC technology.
